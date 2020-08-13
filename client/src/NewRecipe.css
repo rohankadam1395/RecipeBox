@@ -1,0 +1,12 @@
+.recipeInput{
+    background-color: gold;
+        /* display: flex;
+        float: left; */
+}
+
+h1{
+    text-align: center;
+margin: 0;
+    /* align-self: center; */
+    background-color: gray;
+}
