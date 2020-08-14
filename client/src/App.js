@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
 import NewRecipe from './NewRecipe';
+import RecipeIndex from './RecipeIndex';
+import RecipeDetail from './RecipeDetail';
+import EditRecipe from './EditRecipe';
 class App extends React.Component {
   constructor(props){
 super(props);
 this.state={
   addRecipeToggle:false,
   childData:"",
-  recipe:[]
+  recipe:[],
+  detail:"No Recipes yet",
+  editRecipe:""
   // recipe:JSON.parse(localStorage.getItem("recipe")).split(",")
 }
 this.addRecipeToggle=this.addRecipeToggle.bind(this);
@@ -52,21 +57,29 @@ recipe:a
   render(){
     return (
       <div className="App">
-       <div className="index">Index: 
-       <ul>
-
-       </ul>
-       {this.state.recipe.map((data,index)=>{
-         return <li key={index}>{data.name}</li>;
-       })}
-       </div>
-       {/* <div className="details">details  {this.state.childData.recipeDetails && this.state.childData.recipeDetails.value}</div> */}
+        <RecipeIndex recipe={this.state.recipe} detail={(data)=>{
+          console.log("In App");
+          console.log(data);
+this.setState({
+detail:data
+})
+        }}/>
+       <RecipeDetail detail={this.state.detail}  editRecipe={(data)=>{
+         console.log("Got the recipe to edit");
+         console.log(data);
+         this.setState({
+           editRecipe:data
+         })
+       }}/>
 
        <button onClick={this.addRecipeToggle}>Add Recipe</button>
 {this.state.addRecipeToggle && <NewRecipe  callFromParent={this.fromParent}/>}
+
+<EditRecipe recipeToEdit={this.state.editRecipe}/>
       </div>
     );
   }
+  
  
 }
 
