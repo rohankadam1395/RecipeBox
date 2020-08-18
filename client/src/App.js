@@ -12,12 +12,14 @@ this.state={
   childData:"",
   recipe:[],
   detail:"No Recipes yet",
-  editRecipe:""
+  editRecipe:"",
+  editRecipeToggle:false,
+  index:0
   // recipe:JSON.parse(localStorage.getItem("recipe")).split(",")
 }
 this.addRecipeToggle=this.addRecipeToggle.bind(this);
 this.fromParent=this.fromParent.bind(this);
-
+this.toggle=this.toggle.bind(this);
   }
 
 
@@ -38,44 +40,66 @@ a=JSON.parse(localStorage.getItem("recipe"));
 
   addRecipeToggle(){
     this.setState({
-      addRecipeToggle:!this.state.addRecipeToggle
+      addRecipeToggle:true
 
     })
   }
 
-  fromParent=(dataFromChild)=>{
+  toggle(){
+    console.log("toggle called")
+this.setState({
+  editRecipeToggle:false,
+  addRecipeToggle:false
+})
+  }
+
+  fromParent=()=>{
 // console.log(dataFromChild);
 var a=[];
 a=JSON.parse(localStorage.getItem("recipe"));
 //had to initiale an empty array and then assign the JSON.parse so as that it converts to an array
 console.log(a);
 this.setState({
-  childData:dataFromChild,
+  // childData:dataFromChild,
 recipe:a
 })
+  }
+
+  deleteRecipe(index){
+console.log("In parent "+index);
+let recipe=[];
+recipe=JSON.parse(localStorage.getItem("recipe")||[]);
+
+recipe.splice(index,index);
+localStorage.setItem("recipe",JSON.stringify(recipe));
+//  this.fromParent();
+
+
   }
   render(){
     return (
       <div className="App">
-        <RecipeIndex recipe={this.state.recipe} detail={(data)=>{
+        <RecipeIndex recipe={this.state.recipe} detail={(data,index)=>{
           console.log("In App");
           console.log(data);
 this.setState({
-detail:data
+detail:data,
+index:index
 })
         }}/>
-       <RecipeDetail detail={this.state.detail}  editRecipe={(data)=>{
+       <RecipeDetail callFromParent={this.fromParent} deleteRecipe={this.deleteRecipe} index={this.state.index} detail={this.state.detail}  editRecipe={(data)=>{
          console.log("Got the recipe to edit");
          console.log(data);
          this.setState({
+          editRecipeToggle:true,
            editRecipe:data
          })
        }}/>
 
        <button onClick={this.addRecipeToggle}>Add Recipe</button>
-{this.state.addRecipeToggle && <NewRecipe  callFromParent={this.fromParent}/>}
+{this.state.addRecipeToggle && <NewRecipe  callFromParent={this.fromParent}  toggle={this.toggle}/>}
 
-<EditRecipe recipeToEdit={this.state.editRecipe}/>
+{this.state.editRecipeToggle && <EditRecipe callFromParent={this.fromParent} recipeToEdit={this.state.editRecipe} index={this.state.index} toggle={this.toggle}/>}
       </div>
     );
   }

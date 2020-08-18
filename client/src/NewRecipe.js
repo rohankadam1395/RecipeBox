@@ -24,14 +24,18 @@ class NewRecipe extends React.Component{
     recipe.push(obj);
 localStorage.setItem("recipe",JSON.stringify(recipe));
 // localStorage.setItem("recipeDetails",event.target.elements.recipeDetails.value);
-this.props.callFromParent(event.target.elements);
+// this.props.callFromParent(event.target.elements);
+this.props.callFromParent();
+
+this.props.toggle();
      event.preventDefault();
 }
 
 render(){
     return(
-        <div >
-            <h1>new Recipe</h1>
+        <div className="newRecipeModal">
+          <div className="addRecipeHeader"> <h1 className="AddTitle">Add Recipe</h1> <button className="close" onClick={this.props.toggle}>Close</button> 
+</div>
             <form className="recipeInput" onSubmit={this.submit}>
             <label>Recipe Name: <input id="recipeName" type="text"  /></label>
             <br/>

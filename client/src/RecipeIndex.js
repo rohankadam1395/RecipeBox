@@ -13,7 +13,7 @@ class RecipeIndex extends React.Component{
 
     details(index,data){
         console.log("clciked "+index);
-        this.props.detail(data);
+        this.props.detail(data,index);
 // this.setState({
 // detail:data
 // })

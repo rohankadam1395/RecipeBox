@@ -1,5 +1,17 @@
+.newRecipeModal{
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(0,0,0,0.4);
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .recipeInput{
-    background-color: gold;
+    /* background-color: gold;
+    background-color: #fefefe; */
+margin: 15% auto;
         /* display: flex;
         float: left; */
 }
@@ -8,5 +20,14 @@ h1{
     text-align: center;
 margin: 0;
     /* align-self: center; */
-    background-color: gray;
+    /* background-color: gray; */
+}
+.addRecipeHeader{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    background-color: khaki;
+}
+
+.close{
 }
