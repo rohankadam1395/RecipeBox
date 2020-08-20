@@ -11,6 +11,13 @@ class RecipeIndex extends React.Component{
     }
 
 
+componentWillReceiveProps(props){
+    console.log("Props received");
+    console.log(props.recipe[0]);
+
+    //  this.props.detail(this.props.recipe,0);
+
+}
     details(index,data){
         console.log("clciked "+index);
         this.props.detail(data,index);
@@ -19,7 +26,9 @@ class RecipeIndex extends React.Component{
 // })
     }
     render(){
-        return(<div className="index">
+        return(<div className="container" >
+            <div className="index">
+
         <ul>
  
         {this.props.recipe.map((data,index)=>{
@@ -30,7 +39,8 @@ class RecipeIndex extends React.Component{
 {/* <RecipeDetail detail={this.state.detail}/> */}
    
 
- 
+</div>
+
         </div>)
     }
 }

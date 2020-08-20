@@ -48,18 +48,23 @@ event.preventDefault();
     render(){
         return(
             <div className="editRecipeModal">
+                <div className="editRecipeHeader">
                 Edit Recipe : {this.props.recipeToEdit.detail}
-{this.props.index}
-                <form className="recipeInput" onSubmit={this.submit}>
-            <label>Recipe Name: <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name} onChange={this.handleChange} /></label>
-            <br/>
-
-<label>Details: <input id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/></label>
-<br/>
+{this.props.index}            <button onClick={this.props.toggle}>Close</button>
+                </div>
+                
+                <form className="editForm" onSubmit={this.submit}>
+<p>
+            <label for="recipeName">Recipe Name: </label>
+            <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name} onChange={this.handleChange} />
+            </p>
+            <p>
+<label for="recipeDetails">Details: </label>
+<input id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/>
+</p>
 <button type="submit" value="Submit">Submit</button>
 
             </form>
-            <button onClick={this.props.toggle}>Close</button>
 
             </div>
         )

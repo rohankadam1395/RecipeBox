@@ -1,10 +1,27 @@
 
 .App{
-  background-color: forestgreen;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5em;
+  height: 100vh;
   min-height: 100vh;
   max-width: 100vw;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center; 
 /* justify-content: center; */
+}
+
+button{
+  font-size:0.8em;
+  color: white;
+  border: 2px solid;
+  background-color:red;
+  box-shadow: rosybrown 2px 1px 1px 1px;
+  border-radius: 1em;
+  margin: 1%;
+}
+
+button:hover{
+  background-color: seagreen;
 }

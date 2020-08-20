@@ -1,7 +1,47 @@
 .editRecipeModal{
-    width: 50%;
-    position: fixed;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    width: 25%;
     z-index: 1;
-    background-color: rgb(0, 0, 0,0.4);
-    margin: auto;
+    background-color: white;
+    margin-top: 2em;
+
+}
+
+.editRecipeHeader{
+    background-color: khaki;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+}
+.editForm{
+    display: table;
+    width: 100%;
+
+}
+
+label{
+    display:table-cell;
+border: 2px solid black ;
+width: 40%;
+
+}
+
+input{
+    display: table-cell;
+    border: 2px solid black ;
+width: 60%;
+}
+
+p{
+     display: table-row;
+    background-color: lawngreen;
+    text-align: center;
+    width: 100%;
+
+    
 }

@@ -1,9 +1,18 @@
 .details{
     display: flex;
-    flex-direction: column;;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     width: 50%;
-    height: 50vh;
+    height: 50%;
+
     background-color: lemonchiffon;
+}
+
+.delRecipe{
+}
+.recipeName{
+}
+.Detail{
+    width: 100%;
+    height: 100%;
+        background-color: hotpink;
 }
