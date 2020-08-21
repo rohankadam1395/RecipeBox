@@ -26,12 +26,10 @@ deleteRecipe(){
 }
 
 render(){
-    let temp=[];
-    temp=JSON.parse(localStorage.getItem("recipe")) || [];
     return(
         <div className="details">
 
-           <div className="recipeName"> {this.props.detail.name || temp[temp.length-1].name  || "No Name for recipe"}
+           <div className="recipeName"> {this.props.detail.name || "No Name for recipe"}
            
            {<button onClick={()=>{
 this.props.editRecipe(this.props.detail);      
@@ -41,7 +39,7 @@ this.props.editRecipe(this.props.detail);
            </div>
         
 <div className="Detail">    
-{this.props.detail.detail  || temp[temp.length-1].detail || "No Details for recipe"}
+{this.props.detail.detail || "No Details for recipe"}
 </div>    
         </div>
     )

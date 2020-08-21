@@ -7,15 +7,18 @@
     z-index: 1;
     background-color: white;
     margin-top: 2em;
+    box-shadow: gray 0px 2px 0px 0px;
 
 }
 
-.editRecipeHeader{
+.editRecipeHeader{  
     background-color: khaki;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    box-shadow: gray 0px 2px 0px 0px;
+    
 
 }
 .editForm{
@@ -26,20 +29,17 @@
 
 label{
     display:table-cell;
-border: 2px solid black ;
 width: 40%;
 
 }
 
 input{
     display: table-cell;
-    border: 2px solid black ;
 width: 60%;
 }
 
 p{
      display: table-row;
-    background-color: lawngreen;
     text-align: center;
     width: 100%;
 

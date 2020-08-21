@@ -50,7 +50,7 @@ event.preventDefault();
             <div className="editRecipeModal">
                 <div className="editRecipeHeader">
                 Edit Recipe : {this.props.recipeToEdit.detail}
-{this.props.index}            <button onClick={this.props.toggle}>Close</button>
+            <button onClick={this.props.toggle}>Close</button>
                 </div>
                 
                 <form className="editForm" onSubmit={this.submit}>

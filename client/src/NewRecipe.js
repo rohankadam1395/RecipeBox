@@ -34,12 +34,22 @@ this.props.toggle();
 render(){
     return(
         <div className="newRecipeModal">
-          <div className="addRecipeHeader"> <p className="AddTitle">Add Recipe</p> <button className="close" onClick={this.props.toggle}>Close</button> 
+          <div className="addRecipeHeader">Add Recipe <button className="close" onClick={this.props.toggle}>Close</button> 
 </div>
-            <form className="recipeInput" onSubmit={this.submit}>
-            <label>Recipe Name: <input id="recipeName" type="text"  /></label>
+            <form className="newRecipeForm" onSubmit={this.submit}>
+                <p>
 
-<label>Details: <input id="recipeDetails" type="text" /></label>
+               
+            <label for="recipeName">Recipe Name: </label>
+            <input id="recipeName" type="text"  />
+            </p>
+            <p>
+
+           
+<label for="recipeDetails">Details: </label>
+<input id="recipeDetails" type="text" />
+
+</p>
 <button type="submit" value="Submit">Submit</button>
             </form>
 

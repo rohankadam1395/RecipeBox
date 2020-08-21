@@ -20,7 +20,7 @@ li{
 .container{
     display: flex;
 
-background-color: red;
+    background-color: lemonchiffon;
 justify-content: center;
 align-items: center;
     width:50%;
@@ -31,6 +31,6 @@ align-items: center;
 }
 
 li:hover{
-    background-color: yellowgreen;
+    background-color: khaki;
     border-radius: 0.3em;
 }

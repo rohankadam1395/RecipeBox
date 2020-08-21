@@ -95,6 +95,29 @@ this.toggle=this.toggle.bind(this);
   
 }
 
+
+componentWillMount(){
+
+if(this.state.detail===""){
+
+
+  let obj=JSON.parse(localStorage.getItem("recipe"));
+  this.state.index=0;
+  this.state.detail=obj[0];
+  this.state.editRecipe=obj[0];
+}
+
+this.state.index=1;
+console.log("Let seee");
+console.log(localStorage.getItem("recipe"));
+console.log(this.state.detail);
+console.log(this.state.index);
+console.log(this.state.editRecipe);
+console.log("Let seee");
+
+
+
+}
   addRecipeToggle(){
     this.setState({
       addRecipeToggle:true
