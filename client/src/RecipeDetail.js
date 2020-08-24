@@ -12,6 +12,7 @@ class RecipeDetail extends React.Component{
 componentDidMount(){
     console.log("Recipe detail mounted");
     console.log(this.props.detail);
+    
 }
 componentWillReceiveProps(props){
     console.log("Props received in RecipeDetail");
@@ -21,8 +22,16 @@ deleteRecipe(){
     console.log('Delete ');
     console.log(this.props.index);
     this.props.deleteRecipe(this.props.index);
-    // this.props.editRecipe(this.props.detail);      
-    this.props.callFromParent();
+    // this.props.editRecipe(this.props.detail);  
+    if(this.props.index>0){
+        this.props.callFromParent(this.props.index-1);
+
+    }else{
+        this.props.callFromParent(0);
+
+    }
+
+    
 }
 
 render(){
@@ -38,9 +47,23 @@ this.props.editRecipe(this.props.detail);
 {<button className="delRecipe" onClick={this.deleteRecipe}>Delete Recipe</button>}
            </div>
         
-<div className="Detail">    
-{this.props.detail.detail || "No Details for recipe"}
-</div>    
+<div className="Detail"> 
+Ingredients: 
+<ul>
+{this.props.detail.detail.split("\\").map((data,index)=>{
+    return <li>{data}</li>;
+}) || "No Details for recipe"}
+</ul>
+</div>   
+<div className="Procedure">
+Procedure:
+<ol>
+{this.props.detail.procedure.split("\\").map((data,index)=>{
+        return <li>{data}</li>;
+    })}
+</ol>
+</div>
+
         </div>
     )
 }

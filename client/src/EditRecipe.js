@@ -26,6 +26,7 @@ handleChange(event){
 // }
 
 submit(event){
+
 let recipe=[];
 
 
@@ -34,15 +35,18 @@ recipe=JSON.parse(localStorage.getItem("recipe")||[]);
 let obj=recipe[this.props.index];
 obj.name=event.target.elements.recipeName.value;
 obj.detail=event.target.elements.recipeDetails.value;
+obj.procedure=event.target.elements.recipeProcedure.value;
 recipe[this.props.index]=obj;
 localStorage.setItem("recipe",JSON.stringify(recipe));
 console.log("Update this");
 console.log(obj);
 // this.props.callFromParent(event.target.elements);
-this.props.callFromParent();
+this.props.callFromParent(this.props.index);
 
 this.props.toggle();
+
 event.preventDefault();
+
 }
 
     render(){
@@ -61,6 +65,11 @@ event.preventDefault();
             <p>
 <label for="recipeDetails">Details: </label>
 <input id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/>
+</p>
+
+<p>
+    <label for="recipeProcedure">Procedure: </label>
+    <input id="recipeProcedure" type="text" defaultValue={this.props.recipeToEdit.procedure}/>
 </p>
 <button type="submit" value="Submit">Submit</button>
 

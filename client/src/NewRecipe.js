@@ -19,13 +19,15 @@ class NewRecipe extends React.Component{
 
     let obj={
         name:event.target.elements.recipeName.value,
-        detail:event.target.elements.recipeDetails.value
+        detail:event.target.elements.recipeDetails.value,
+        procedure:event.target.elements.recipeProcedure.value
+
     }
     recipe.push(obj);
 localStorage.setItem("recipe",JSON.stringify(recipe));
 // localStorage.setItem("recipeDetails",event.target.elements.recipeDetails.value);
 // this.props.callFromParent(event.target.elements);
-this.props.callFromParent();
+this.props.callFromParent(recipe.length-1);
 
 this.props.toggle();
      event.preventDefault();
@@ -49,6 +51,10 @@ render(){
 <label for="recipeDetails">Details: </label>
 <input id="recipeDetails" type="text" />
 
+</p>
+<p>
+    <label for="recipeProcedure">Procedure: </label>
+    <input id="recipeProcedure" type="text"/>
 </p>
 <button type="submit" value="Submit">Submit</button>
             </form>

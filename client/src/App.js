@@ -19,7 +19,7 @@ var a=[];
     let obj={
         name:"Trial name",
         detail:"Trial detail",
-        procedure:""
+        procedure:"Trial Procedure"
       };
       a.push(obj);
     localStorage.setItem("recipe",JSON.stringify(a));
@@ -34,7 +34,8 @@ this.state={
   detail:"",
   editRecipe:"",
   editRecipeToggle:false,
-  index:0
+  index:0,
+  procedure:""
   // recipe:JSON.parse(localStorage.getItem("recipe")).split(",")
 }
 
@@ -105,6 +106,7 @@ if(this.state.detail===""){
   this.state.index=0;
   this.state.detail=obj[0];
   this.state.editRecipe=obj[0];
+
 }
 
 this.state.index=1;
@@ -133,7 +135,7 @@ this.setState({
 })
   }
 
-  fromParent=()=>{
+  fromParent=(index)=>{
 // console.log(dataFromChild);
 var a=[];
 a=JSON.parse(localStorage.getItem("recipe"))|| [];
@@ -142,7 +144,9 @@ console.log(a);
 this.setState({
   // childData:dataFromChild,
 recipe:a,
-detail:""
+detail:a[index],
+
+
 })
   }
 
@@ -170,7 +174,8 @@ window.alert("One item needs to be present");
           console.log("=====");
 this.setState({
 detail:data,
-index:index
+index:index,
+editRecipe:data
 })
         }}/>
        <RecipeDetail callFromParent={this.fromParent} deleteRecipe={this.deleteRecipe} index={this.state.index} detail={this.state.detail}  editRecipe={(data)=>{
