@@ -17,9 +17,9 @@ var a=[];
   
 
     let obj={
-        name:"Trial name",
-        detail:"Trial detail",
-        procedure:"Trial Procedure"
+        name:"Test name",
+        detail:"Ingredient1\\Ingredient2\\Ingredient3",
+        procedure:"Step1\\Step2\\Step3"
       };
       a.push(obj);
     localStorage.setItem("recipe",JSON.stringify(a));

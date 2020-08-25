@@ -43,20 +43,22 @@ render(){
 
                
             <label for="recipeName">Recipe Name: </label>
-            <input id="recipeName" type="text"  />
+            <input id="recipeName" type="text"  placeholder="Enter Recipe Name"/>
             </p>
             <p>
 
            
-<label for="recipeDetails">Details: </label>
-<input id="recipeDetails" type="text" />
+<label for="recipeDetails">Ingredients: </label>
+<textarea id="recipeDetails" type="text" placeholder="Enter ingredients separated by \" rows="3"/>
 
 </p>
 <p>
     <label for="recipeProcedure">Procedure: </label>
-    <input id="recipeProcedure" type="text"/>
+    <textarea id="recipeProcedure" type="text" placeholder="Enter steps to prepare separated by \" rows="3"/>
 </p>
-<button type="submit" value="Submit">Submit</button>
+
+<button type="submit" value="Submit" class="newRecipeSubmit">Submit</button>
+    
             </form>
 
 

@@ -53,7 +53,7 @@ event.preventDefault();
         return(
             <div className="editRecipeModal">
                 <div className="editRecipeHeader">
-                Edit Recipe : {this.props.recipeToEdit.detail}
+                Edit Recipe : {this.props.recipeToEdit.name}
             <button onClick={this.props.toggle}>Close</button>
                 </div>
                 
