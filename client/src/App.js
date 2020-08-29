@@ -109,7 +109,7 @@ if(this.state.detail===""){
 
 }
 
-this.state.index=1;
+// this.state.index=0;
 console.log("Let seee");
 console.log(localStorage.getItem("recipe"));
 console.log(this.state.detail);
@@ -143,6 +143,7 @@ a=JSON.parse(localStorage.getItem("recipe"))|| [];
 console.log(a);
 this.setState({
   // childData:dataFromChild,
+  index:index,
 recipe:a,
 detail:a[index],
 

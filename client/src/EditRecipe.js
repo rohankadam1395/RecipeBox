@@ -11,6 +11,13 @@ class EditRecipe extends React.Component{
         this.submit=this.submit.bind(this);
     }
 
+    componentDidMount(){
+        console.log("In Edit Recipe");
+        console.log(this.props);
+        console.log(this.props.index);
+        console.log(this.state);
+    }
+
 handleChange(event){
     this.setState({
         recipe:event.target.value
@@ -26,13 +33,14 @@ handleChange(event){
 // }
 
 submit(event){
-
+console.log(event.target.elements.recipeName);
 let recipe=[];
 
 
 recipe=JSON.parse(localStorage.getItem("recipe")||[]);
-
+console.log(recipe);
 let obj=recipe[this.props.index];
+console.log(obj);
 obj.name=event.target.elements.recipeName.value;
 obj.detail=event.target.elements.recipeDetails.value;
 obj.procedure=event.target.elements.recipeProcedure.value;
@@ -60,7 +68,7 @@ event.preventDefault();
                 <form className="editForm" onSubmit={this.submit}>
 <p>
             <label for="recipeName">Recipe Name: </label>
-            <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name} onChange={this.handleChange} />
+            <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name}  />
             </p>
             <p>
 <label for="recipeDetails">Details: </label>
