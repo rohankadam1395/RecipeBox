@@ -14,10 +14,10 @@ componentDidMount(){
     console.log(this.props.detail);
     
 }
-componentWillReceiveProps(props){
-    console.log("Props received in RecipeDetail");
-console.log(props);
-}
+// componentWillReceiveProps(props){
+//     console.log("Props received in RecipeDetail");
+// console.log(props);
+// }
 deleteRecipe(){
     console.log('Delete ');
     console.log(this.props.index);
@@ -51,7 +51,7 @@ this.props.editRecipe(this.props.detail);
 Ingredients: 
 <ul>
 {this.props.detail.detail.split("\\").map((data,index)=>{
-    return <li>{data}</li>;
+    return <li key={index}>{data}</li>;
 }) || "No Details for recipe"}
 </ul>
 </div>   
@@ -59,7 +59,7 @@ Ingredients:
 Procedure:
 <ol>
 {this.props.detail.procedure.split("\\").map((data,index)=>{
-        return <li>{data}</li>;
+        return <li key={index}>{data}</li>;
     })}
 </ol>
 </div>

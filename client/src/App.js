@@ -26,19 +26,20 @@ var a=[];
 
   }
   
-
+console.log("con1");
 this.state={
   addRecipeToggle:false,
   childData:"",
   recipe:a,
-  detail:"",
-  editRecipe:"",
+  detail:a[0],
+  editRecipe:a[0],
   editRecipeToggle:false,
   index:0,
   procedure:""
   // recipe:JSON.parse(localStorage.getItem("recipe")).split(",")
 }
 
+console.log("Con2");
 console.log("Chek "+this.state.detail.detail)
 this.addRecipeToggle=this.addRecipeToggle.bind(this);
 this.fromParent=this.fromParent.bind(this);
@@ -97,29 +98,34 @@ this.toggle=this.toggle.bind(this);
 }
 
 
-componentWillMount(){
+// componentWillMount(){
 
-if(this.state.detail===""){
-
-
-  let obj=JSON.parse(localStorage.getItem("recipe"));
-  this.state.index=0;
-  this.state.detail=obj[0];
-  this.state.editRecipe=obj[0];
-
-}
-
-// this.state.index=0;
-console.log("Let seee");
-console.log(localStorage.getItem("recipe"));
-console.log(this.state.detail);
-console.log(this.state.index);
-console.log(this.state.editRecipe);
-console.log("Let seee");
+// // if(this.state.detail===""){
 
 
+// //   let obj=JSON.parse(localStorage.getItem("recipe"));
+// //   this.setState({
+// //     index:0,
+// //     detail:obj[0],
+// //     editRecipe:obj[0]
+// //   });
+// //   // this.state.index=0;
+// //   // this.state.detail=obj[0];
+// //   // this.state.editRecipe=obj[0];
 
-}
+// // }
+
+// // this.state.index=0;
+// console.log("Let seee");
+// console.log(localStorage.getItem("recipe"));
+// console.log(this.state.detail);
+// console.log(this.state.index);
+// console.log(this.state.editRecipe);
+// console.log("Let seee");
+
+
+
+// }
   addRecipeToggle(){
     this.setState({
       addRecipeToggle:true

@@ -11,13 +11,13 @@ class RecipeIndex extends React.Component{
     }
 
 
-componentWillReceiveProps(props){
-    console.log("Props received");
-    console.log(props.recipe[0]);
+// componentWillReceiveProps(props){
+//     console.log("Props received");
+//     console.log(props.recipe[0]);
 
-    //  this.props.detail(this.props.recipe,0);
+//     //  this.props.detail(this.props.recipe,0);
 
-}
+// }
     details(index,data){
         console.log("clciked "+index);
         this.props.detail(data,index);

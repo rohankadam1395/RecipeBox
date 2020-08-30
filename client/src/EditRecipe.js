@@ -67,16 +67,16 @@ event.preventDefault();
               <div className="editFormContainer">
                 <form className="editForm" onSubmit={this.submit}>
 <p>
-            <label for="recipeName">Recipe Name: </label>
+            <label htmlFor="recipeName">Recipe Name: </label>
             <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name}  />
             </p>
             <p>
-<label for="recipeDetails">Ingredients: </label>
+<label htmlFor="recipeDetails">Ingredients: </label>
 <textarea id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/>
 </p>
 
 <p>
-    <label for="recipeProcedure">Procedure: </label>
+    <label htmlFor="recipeProcedure">Procedure: </label>
     <textarea id="recipeProcedure" type="text" defaultValue={this.props.recipeToEdit.procedure}/>
 </p>
 <div  className="submitButton">
