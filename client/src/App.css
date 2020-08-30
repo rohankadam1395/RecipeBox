@@ -26,3 +26,11 @@ button{
 button:hover{
   background-color: seagreen;
 }
+
+@media(max-width: 400px){
+.App{
+   /* background-color: green; */
+}
+
+
+}

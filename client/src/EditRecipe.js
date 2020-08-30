@@ -64,24 +64,28 @@ event.preventDefault();
                 Edit Recipe : {this.props.recipeToEdit.name}
             <button onClick={this.props.toggle}>Close</button>
                 </div>
-                
+              <div className="editFormContainer">
                 <form className="editForm" onSubmit={this.submit}>
 <p>
             <label for="recipeName">Recipe Name: </label>
             <input id="recipeName" type="text"  defaultValue={this.props.recipeToEdit.name}  />
             </p>
             <p>
-<label for="recipeDetails">Details: </label>
-<input id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/>
+<label for="recipeDetails">Ingredients: </label>
+<textarea id="recipeDetails" type="text" defaultValue={this.props.recipeToEdit.detail}/>
 </p>
 
 <p>
     <label for="recipeProcedure">Procedure: </label>
-    <input id="recipeProcedure" type="text" defaultValue={this.props.recipeToEdit.procedure}/>
+    <textarea id="recipeProcedure" type="text" defaultValue={this.props.recipeToEdit.procedure}/>
 </p>
-<button type="submit" value="Submit">Submit</button>
+<div  className="submitButton">
+<button  type="submit" value="Submit">Submit</button>
+
+</div>
 
             </form>
+            </div>  
 
             </div>
         )

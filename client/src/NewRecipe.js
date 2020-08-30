@@ -38,6 +38,8 @@ render(){
         <div className="newRecipeModal">
           <div className="addRecipeHeader">Add Recipe <button className="close" onClick={this.props.toggle}>Close</button> 
 </div>
+<div className="formContainer">
+
             <form className="newRecipeForm" onSubmit={this.submit}>
                 <p>
 
@@ -56,10 +58,15 @@ render(){
     <label for="recipeProcedure">Procedure: </label>
     <textarea id="recipeProcedure" type="text" placeholder="Enter steps to prepare separated by \" rows="3"/>
 </p>
+<div className="submitButton">
+<button type="submit" value="Submit" className="newRecipeSubmit">Submit</button>
 
-<button type="submit" value="Submit" class="newRecipeSubmit">Submit</button>
+</div>
+
     
             </form>
+            </div>
+
 
 
         </div>

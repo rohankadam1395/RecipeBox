@@ -15,19 +15,44 @@
     box-shadow: gray 0px 2px 0px 0px;
     z-index: 1;
 
+
 }
 .Detail{
     width: 100%;
     height: 50%;
         background-color: lightgoldenrodyellow;
-
+        /* padding-left: 150px; */
+            /* margin-left: 150px; */
+            /* border: 2px solid black; */
         
 }
+
+ul{
+    margin-left: 1em;
+
+}
 .Procedure{
+
 }
 
 
 ol{
-    margin: 0;
+    margin-left: 1em;
 }
 
+
+
+@media(max-width:400px){
+    .details{
+width: 90%;
+height: auto;
+
+    }
+
+    .recipeName{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+}

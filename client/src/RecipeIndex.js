@@ -1,6 +1,6 @@
 import React from 'react';
 import './RecipeIndex.css';
-import RecipeDetail from './RecipeDetail';
+// import RecipeDetail from './RecipeDetail';
 class RecipeIndex extends React.Component{
     constructor(props){
         super(props);

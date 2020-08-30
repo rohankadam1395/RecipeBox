@@ -12,7 +12,7 @@ var a=[];
   console.log(a);
 
   
-  if(a.length==0){
+  if(a.length===0){
 
   
 
@@ -155,7 +155,7 @@ detail:a[index],
 console.log("In parent "+index);
 let recipe=[];
 recipe=JSON.parse(localStorage.getItem("recipe")||[]);
-if(recipe.length==1){
+if(recipe.length===1){
 window.alert("One item needs to be present");
 }else{
   recipe.splice(index,1);
