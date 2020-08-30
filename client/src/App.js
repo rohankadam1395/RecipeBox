@@ -175,6 +175,7 @@ window.alert("One item needs to be present");
   render(){
     return (
       <div className="App">
+        <h1>Recipe Box</h1>
         <RecipeIndex recipe={this.state.recipe} detail={(data,index)=>{
           console.log("In App");
           console.log(data);

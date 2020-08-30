@@ -10,8 +10,11 @@
     z-index: 1;
     background-color: white;
     box-shadow: gray 0px 2px;
-    margin-top: 2em;
-    /* border: solid 2px red; */
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    /* border: solid 2px red; */
 
 
 }
@@ -89,6 +92,11 @@ button{
     .newRecipeModal{
 width: 90%;
 height: auto;
+margin-top: 2em;
+top: auto;
+right: auto;
+bottom: auto;
+left: auto;
     }
 
     .newRecipeForm{
