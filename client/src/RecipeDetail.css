@@ -39,7 +39,15 @@ ul{
 ol{
     margin-left: 1em;
 }
+.recipeName{
+    display: flex;
+    align-items: center;
+}
+.editRecipeBtn{
+margin-left: auto;}
 
+.delRecipe{
+}
 
 
 @media(max-width:400px){
@@ -53,6 +61,10 @@ height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+
 }
+
+.editRecipeBtn{
+    margin-left: 0;}
 
 }

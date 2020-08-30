@@ -40,7 +40,7 @@ render(){
 
            <div className="recipeName"> {this.props.detail.name || "No Name for recipe"}
            
-           {<button onClick={()=>{
+           {<button  className="editRecipeBtn" onClick={()=>{
 this.props.editRecipe(this.props.detail);      
     }}>Edit Recipe</button>}
 
